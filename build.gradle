@@ -17,7 +17,8 @@ repositories {
 }
 
 dependencies {
-//NONE
+    //include local jars
+    testImplementation fileTree(dir: 'lib', include: ['*.jar'])
 }
 
 def static getDate() {
@@ -34,7 +35,7 @@ java.toolchain {
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'Helios',
+        attributes 'Implementation-Title': rootProject.name,
                    'Implementation-Version': archiveVersion
     }
     getArchiveBaseName().set(rootProject.name)
@@ -48,7 +49,7 @@ jar {
 tasks.register('jarWithSources', org.gradle.jvm.tasks.Jar) {
     from sourceSets.main.allSource
     manifest {
-        attributes 'Implementation-Title': 'Helios',
+        attributes 'Implementation-Title': rootProject.name,
                 'Implementation-Version': archiveVersion
     }
     getArchiveFileName().set(rootProject.name + "-binsrc-${project.version}.jar")
