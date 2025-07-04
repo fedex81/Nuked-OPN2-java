@@ -1,0 +1,1 @@
+java -XX:AutoBoxCacheMax=65536 -XX:-DontCompileHugeMethods -XX:+AlwaysCompileLoopMethods -Dtinylog.configuration=./res/tinylog.properties -Djinput.enable=true -Djinput.native.location=lib -jar helios-25.0704-SNAPSHOT.jar "$@"
