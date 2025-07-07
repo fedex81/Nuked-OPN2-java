@@ -2,11 +2,10 @@ def dateString = getDate()
 group 'com.fbdev.helios'
 
 
-def javaVersion = JavaVersion.VERSION_17;
+def javaVersion = JavaVersion.VERSION_21
 
 //version dateString
 version dateString + '-SNAPSHOT'
-def jarNameHead = rootProject.name + "-" + version
 
 String packageDir = getLayout().getBuildDirectory().dir("packageDir").get()
 
